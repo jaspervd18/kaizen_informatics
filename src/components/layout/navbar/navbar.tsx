@@ -1,13 +1,21 @@
-import LogoSquare from "components/logo-square";
-import { getMenu } from "lib/shopify";
-import { Menu } from "lib/shopify/types";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
+import { Menu } from "@/lib/types";
+import LogoSquare from "@/components/logo-square";
 const { SITE_NAME } = process.env;
 
-export default async function Navbar() {
-  const menu = await getMenu("next-js-frontend-header-menu");
+const menu = [
+  {
+    title: "Inspiratie",
+    path: "/inspiratie",
+  },
+  {
+    title: "Afspraak maken",
+    path: "/afspraak",
+  },
+];
 
+export default async function Navbar() {
   return (
     <nav className="relative flex items-center justify-between p-4 lg:px-6">
       <div className="block flex-none md:hidden">
