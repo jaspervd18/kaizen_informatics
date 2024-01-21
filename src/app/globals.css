@@ -74,3 +74,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .corner {
+    @apply pointer-events-none absolute z-10 h-20 w-full;
+
+    /* Update the gradients based on mode */
+    &.top-left {
+      @apply -top-1 bg-gradient-to-b from-white to-transparent dark:from-black dark:to-transparent;
+    }
+
+    &.top-right {
+      @apply -top-1 bg-gradient-to-t from-white to-transparent dark:from-black dark:to-transparent;
+    }
+
+    &.bottom-left {
+      @apply -left-1 bg-gradient-to-r from-white to-transparent dark:from-black dark:to-transparent;
+    }
+
+    &.bottom-right {
+      @apply -right-1 bg-gradient-to-l from-white to-transparent dark:from-black dark:to-transparent;
+    }
+  }
+}
