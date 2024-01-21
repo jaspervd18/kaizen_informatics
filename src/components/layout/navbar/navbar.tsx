@@ -2,6 +2,8 @@ import Link from "next/link";
 import MobileMenu from "./mobile-menu";
 import { Menu } from "@/lib/types";
 import LogoSquare from "@/components/logo-square";
+import { Suspense } from "react";
+import { ModeToggle } from "../mode-toggle";
 const { SITE_NAME } = process.env;
 
 const menu = [
@@ -46,6 +48,11 @@ export default async function Navbar() {
               ))}
             </ul>
           ) : null}
+        </div>
+        <div className="flex justify-end w-full">
+          <Suspense>
+            <ModeToggle />
+          </Suspense>
         </div>
       </div>
     </nav>

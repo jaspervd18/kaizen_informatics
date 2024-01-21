@@ -1,3 +1,4 @@
+import { InfiniteCarousel } from "@/components/infinite-carousel";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
@@ -11,9 +12,7 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <>
-      <div className="min-h-screen p-16 font-bold text-center">
-        Hier komt mijn f*cking nice website
-      </div>
+      <InfiniteCarousel />
       <Suspense>
         <Footer />
       </Suspense>
