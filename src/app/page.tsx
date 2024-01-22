@@ -16,9 +16,6 @@ export default async function HomePage() {
       <InfiniteCarousel />
       <Suspense>
         <Mission />
-        <Suspense>
-          <Footer />
-        </Suspense>
       </Suspense>
     </>
   );
