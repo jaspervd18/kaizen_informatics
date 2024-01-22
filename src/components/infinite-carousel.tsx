@@ -60,7 +60,7 @@ export async function InfiniteCarousel() {
               <circle cx="12" cy="12" r="10" />
               <path d="m9 12 2 2 4-4" />
             </svg>
-            <p className="text-gray-600">Maatwerkoplossingen</p>
+            <p className="text-gray-600">Maatwerk</p>
           </div>
           <div className="flex cursor-pointer items-center space-x-2 rounded-md border border-gray-100 p-5 shadow-md transition-all hover:-translate-y-1 hover:translate-x-1 hover:scale-[1.025] hover:shadow-xl">
             <svg
