@@ -2,6 +2,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/navbar/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ReactNode, Suspense } from "react";
+import { GeistSans } from "geist/font/sans";
+import Footer from "@/components/layout/footer";
 
 const { SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -26,7 +28,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="nl" className={GeistSans.variable}>
       <body className="flex min-h-screen flex-col bg-neutral-50 text-black selection:bg-teal-300 dark:bg-neutral-900 dark:text-white dark:selection:bg-pink-500 dark:selection:text-white">
         <ThemeProvider
           attribute="class"
@@ -38,6 +40,7 @@ export default async function RootLayout({
           <Suspense>
             <main className="container grow">{children}</main>
           </Suspense>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
