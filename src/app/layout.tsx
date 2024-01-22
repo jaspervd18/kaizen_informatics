@@ -1,8 +1,9 @@
 import "./globals.css";
 import Navbar from "@/components/layout/navbar/navbar";
 import { ReactNode, Suspense } from "react";
-import { GeistSans } from "geist/font/sans";
 import Footer from "@/components/layout/footer";
+import { Inter as FontSans } from "next/font/google";
+import { cn } from "@/lib/utils";
 
 const { SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -21,6 +22,11 @@ export const metadata = {
   },
 };
 
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
 export default async function RootLayout({
   children,
 }: {
@@ -28,7 +34,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <Navbar />
         <Suspense>
           <main className="container grow">{children}</main>

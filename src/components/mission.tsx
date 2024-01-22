@@ -11,7 +11,7 @@ export async function Mission() {
           className="rounded w-full h-auto shadow-2xl"
         />
       </div>
-      <div className="md:w-1/2 bg-secondary  p-4 md:p-4 md:my-8 md:rounded-r-lg max-md:rounded-b-lg shadow-lg">
+      <div className="md:w-1/2 bg-secondary p-4 md:p-8 md:my-8 md:rounded-r-lg max-md:rounded-b-lg shadow-lg">
         <h2 className="text-base md:text-lg lg:text-xl font-light mb-4">
           MISSIE
         </h2>
