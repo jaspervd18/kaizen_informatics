@@ -42,9 +42,11 @@ export default async function RootLayout({
       >
         <Navbar />
         <Suspense>
-          <main className="container grow">{children}</main>
+          <Suspense>
+            <main className="container grow">{children}</main>
+          </Suspense>
+          <Footer />
         </Suspense>
-        <Footer />
       </body>
     </html>
   );

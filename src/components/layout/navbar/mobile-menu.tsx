@@ -1,33 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
-import { Fragment, useEffect, useState } from "react";
 
 import { Menu } from "@/lib/types";
-import { MenuIcon, Sheet, XIcon } from "lucide-react";
-import { SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { MenuIcon } from "lucide-react";
 
 export default function MobileMenu({ menu }: { menu: Menu[] }) {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const openMobileMenu = () => setIsOpen(true);
-  const closeMobileMenu = () => setIsOpen(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [isOpen]);
-
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
   return (
     <Sheet>
       <SheetTrigger
@@ -36,7 +15,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
       >
         <MenuIcon className="h-4" />
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent side={"left"}>
         <div className="p-4">
           {menu.length ? (
             <ul className="flex w-full flex-col">
@@ -45,9 +24,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                   className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
                   key={item.title}
                 >
-                  <Link href={item.path} onClick={closeMobileMenu}>
-                    {item.title}
-                  </Link>
+                  <Link href={item.path}>{item.title}</Link>
                 </li>
               ))}
             </ul>
