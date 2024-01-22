@@ -1,5 +1,6 @@
 import { InfiniteCarousel } from "@/components/infinite-carousel";
 import Footer from "@/components/layout/footer";
+import { Mission } from "@/components/mission";
 import { Suspense } from "react";
 
 export const runtime = "edge";
@@ -14,7 +15,10 @@ export default async function HomePage() {
     <>
       <InfiniteCarousel />
       <Suspense>
-        <Footer />
+        <Mission />
+        <Suspense>
+          <Footer />
+        </Suspense>
       </Suspense>
     </>
   );
